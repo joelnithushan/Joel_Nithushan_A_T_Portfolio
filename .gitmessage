@@ -1,0 +1,18 @@
+# <type>: <subject>
+#
+# <body>
+#
+# <footer>
+
+# Types:
+# feat:     A new feature
+# fix:      A bug fix
+# style:    Changes that do not affect the meaning of the code (formatting, missing semi-colons, etc)
+# refactor: Code change that neither fixes a bug nor adds a feature
+# perf:     A code change that improves performance
+# test:     Adding missing tests or correcting existing tests
+# docs:     Documentation only changes
+# chore:    Changes to the build process or auxiliary tools
+# build:    Changes that affect the build system or external dependencies
+# ci:       Changes to CI configuration files and scripts
+
