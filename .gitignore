@@ -2,10 +2,12 @@
 node_modules/
 package-lock.json
 yarn.lock
-
+.md
 # Build outputs
 dist/
 build/
+.next/
+out/
 *.log
 
 # Environment variables
