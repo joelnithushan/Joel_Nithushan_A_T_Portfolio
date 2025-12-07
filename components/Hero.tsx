@@ -49,7 +49,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
             >
               Hi, I&apos;m{" "}
-              <span className="text-red-600">Joel Nithushan</span>
+              <span className="text-red-600 dark:text-white">Joel Nithushan</span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

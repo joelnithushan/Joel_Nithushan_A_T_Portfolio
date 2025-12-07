@@ -10,7 +10,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 3);
+  // Show only web apps (id 1, 4, 5) and limit to 3
+  const webApps = projects.filter((project) => 
+    project.id === 1 || project.id === 4 || project.id === 5
+  );
+  const featuredProjects = webApps.slice(0, 3);
 
   return (
     <>
@@ -35,7 +39,7 @@ export default function Home() {
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}

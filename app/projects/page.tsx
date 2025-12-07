@@ -36,7 +36,7 @@ export default function ProjectsPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
             Web Apps
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {webApps.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
             Mobile Apps
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {mobileApps.map((project, index) => (
               <ProjectCard 
                 key={project.id} 

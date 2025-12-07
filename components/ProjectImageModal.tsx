@@ -71,18 +71,18 @@ export default function ProjectImageModal({
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2 sm:gap-4">
+              <h3 className="text-base sm:text-xl md:text-2xl font-bold text-white line-clamp-2 pr-2">
                 {projectTitle}
               </h3>
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}
-                className="p-2 glass rounded-lg hover:bg-white/10 transition-colors"
+                className="p-2 glass rounded-lg hover:bg-white/10 transition-colors flex-shrink-0"
                 aria-label="Close"
               >
-                <X className="h-6 w-6 text-white" />
+                <X className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
               </motion.button>
             </div>
 
@@ -116,11 +116,11 @@ export default function ProjectImageModal({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handlePrevious}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
                     aria-label="Previous image"
                   >
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -137,11 +137,11 @@ export default function ProjectImageModal({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
                     aria-label="Next image"
                   >
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -159,15 +159,15 @@ export default function ProjectImageModal({
 
               {/* Image Indicators */}
               {images.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 max-w-full overflow-x-auto px-2">
                   {images.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentIndex(index)}
-                      className={`h-2 rounded-full transition-all ${
+                      className={`h-1.5 sm:h-2 rounded-full transition-all flex-shrink-0 ${
                         index === currentIndex
-                          ? "w-8 bg-red-600"
-                          : "w-2 bg-white/50 hover:bg-white/75"
+                          ? "w-6 sm:w-8 bg-red-600"
+                          : "w-1.5 sm:w-2 bg-white/50 hover:bg-white/75"
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -178,7 +178,7 @@ export default function ProjectImageModal({
 
             {/* Image Counter */}
             {images.length > 1 && (
-              <div className="mt-4 text-center text-white/80 text-sm">
+              <div className="mt-2 sm:mt-4 text-center text-white/80 text-xs sm:text-sm">
                 {currentIndex + 1} / {images.length}
               </div>
             )}

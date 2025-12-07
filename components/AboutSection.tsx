@@ -74,7 +74,7 @@ export default function AboutSection() {
                 />
               </div>
               <div className="text-center space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-bold">Joel Nithushan A.T</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-white">Joel Nithushan A.T</h2>
                 <p className="text-lg sm:text-xl text-primary">Software Developer Intern</p>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <MapPin className="h-5 w-5" />
@@ -136,7 +136,7 @@ export default function AboutSection() {
             <div className="glass-card rounded-2xl p-6 sm:p-8 shadow-glass">
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Professional Summary</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps. Skilled in full-stack development, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
+                Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps. Skilled in MERN stack development, MongoDB database management, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
               </p>
             </div>
 

@@ -68,7 +68,7 @@ export const projects: Project[] = [
     tech: ["Kotlin", "Material 3 UI", "SharedPreferences"],
     github: "https://github.com/joelnithushan/VitaTrack-Health-Wellness-Android-App",
     live: "https://example.com",
-    image: "/images/projects/vitatrack/1.jpg",
+    image: "/images/projects/vitatrack/1.png",
   },
   {
     id: 4,

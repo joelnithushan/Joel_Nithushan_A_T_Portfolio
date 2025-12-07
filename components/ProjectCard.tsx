@@ -35,37 +35,35 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           transition: { duration: 0.3, ease: "easeOut" },
         }}
         onClick={handleCardClick}
-        className="glass-card rounded-2xl overflow-hidden glass-hover cursor-pointer group"
+        className="glass-card rounded-2xl overflow-hidden glass-hover cursor-pointer group h-full flex flex-col"
       >
       {/* Project Image */}
-      <div className="relative w-full h-48 overflow-hidden bg-black/10 flex items-center justify-center">
+      <div className="relative w-full h-48 sm:h-52 md:h-48 overflow-hidden bg-black/10 flex items-center justify-center flex-shrink-0">
         <Image
           src={project.image || "/images/projects/placeholder.jpg"}
           alt={project.title}
           fill
           className={`${
-            project.id === 2
+            project.id === 2 || project.id === 3
               ? "object-cover object-top"
-              : project.id === 3
-              ? "object-contain"
               : "object-cover"
           } group-hover:scale-110 transition-transform duration-300`}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 33vw"
         />
       </div>
       
-      <div className="p-6">
+      <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow">
         <motion.h3
-          className="text-xl font-bold mb-3"
+          className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 line-clamp-2"
           whileHover={{ color: "hsl(var(--primary))" }}
           transition={{ duration: 0.2 }}
         >
           {project.title}
         </motion.h3>
-        <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+        <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 line-clamp-3 flex-grow">{project.description}</p>
         
         {/* Tech Stack Badges */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {project.tech.map((tech, techIndex) => (
             <motion.span
               key={tech}
@@ -78,7 +76,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 backgroundColor: "rgba(59, 130, 246, 0.2)",
                 transition: { duration: 0.2 },
               }}
-              className="px-2 py-1 text-xs bg-white/10 rounded-lg border border-white/20"
+              className="px-2 py-1 text-xs bg-white/10 rounded-lg border border-white/20 whitespace-nowrap"
             >
               {tech}
             </motion.span>
@@ -87,7 +85,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         
         {/* Links */}
         <motion.div
-          className="flex gap-4"
+          className="flex gap-3 sm:gap-4 flex-wrap"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -99,13 +97,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors"
             >
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-4 w-4 sm:h-5 sm:w-5" />
               </motion.div>
               <span>GitHub</span>
             </Link>
@@ -116,13 +114,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors"
             >
               <motion.div
                 whileHover={{ rotate: [0, 10, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <ExternalLink className="h-5 w-5" />
+                <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
               </motion.div>
               <span>Live Demo</span>
             </Link>
