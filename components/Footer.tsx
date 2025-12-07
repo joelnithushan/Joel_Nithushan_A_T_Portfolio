@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
@@ -12,6 +12,7 @@ const socialLinks = [
     label: "LinkedIn",
   },
   { icon: Mail, href: "mailto:joelnithushan6@gmail.com", label: "Email" },
+  { icon: Download, href: "/joel_intern_cv.pdf", label: "Download CV", download: true },
 ];
 
 export default function Footer() {
@@ -23,14 +24,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Joel Nithushan. All rights reserved.
           </p>
           <div className="flex gap-4">
-            {socialLinks.map((social, index) => {
+              {socialLinks.map((social, index) => {
               const Icon = social.icon;
               return (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.download ? undefined : "_blank"}
+                  rel={social.download ? undefined : "noopener noreferrer"}
+                  download={social.download ? "Joel_Nithushan_CV.pdf" : undefined}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}

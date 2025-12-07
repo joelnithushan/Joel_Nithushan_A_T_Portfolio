@@ -1,12 +1,16 @@
-import { Metadata } from "next";
+"use client";
+
 import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
+import { motion } from "framer-motion";
 
-export const metadata: Metadata = {
-  title: "Projects - Joel Nithushan",
-  description:
-    "Explore the portfolio projects of Joel Nithushan, including web applications, mobile apps, and full-stack solutions.",
-};
+// Categorize projects
+const webApps = projects.filter((project) => 
+  project.id === 1 || project.id === 4 || project.id === 5
+);
+const mobileApps = projects.filter((project) => 
+  project.id === 2 || project.id === 3
+);
 
 export default function ProjectsPage() {
   return (
@@ -21,11 +25,43 @@ export default function ProjectsPage() {
             web applications, and mobile development.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+
+        {/* Web Apps Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+            Web Apps
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {webApps.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Mobile Apps Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+            Mobile Apps
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {mobileApps.map((project, index) => (
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                index={webApps.length + index} 
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

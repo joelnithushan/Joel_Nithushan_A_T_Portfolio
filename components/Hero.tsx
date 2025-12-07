@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -84,6 +84,14 @@ export default function Hero() {
                 View Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
+              <a
+                href="/joel_intern_cv.pdf"
+                download="Joel_Nithushan_CV.pdf"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-transparent border-2 border-red-600 text-white rounded-lg hover:bg-red-600 transition-all duration-300 w-full sm:w-auto"
+              >
+                Download CV
+                <Download className="ml-2 h-5 w-5" />
+              </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 w-full sm:w-auto"

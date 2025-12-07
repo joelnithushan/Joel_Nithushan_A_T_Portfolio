@@ -5,6 +5,8 @@ import { Project } from "@/lib/data";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import ProjectImageModal from "./ProjectImageModal";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,26 +14,43 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCardClick = () => {
+    if (project.images && project.images.length > 0) {
+      setIsModalOpen(true);
+    }
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{
-        y: -8,
-        scale: 1.02,
-        transition: { duration: 0.3, ease: "easeOut" },
-      }}
-      className="glass-card rounded-2xl overflow-hidden glass-hover cursor-pointer group"
-    >
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        whileHover={{
+          y: -8,
+          scale: 1.02,
+          transition: { duration: 0.3, ease: "easeOut" },
+        }}
+        onClick={handleCardClick}
+        className="glass-card rounded-2xl overflow-hidden glass-hover cursor-pointer group"
+      >
       {/* Project Image */}
-      <div className="relative w-full h-48 overflow-hidden">
+      <div className="relative w-full h-48 overflow-hidden bg-black/10 flex items-center justify-center">
         <Image
           src={project.image || "/images/projects/placeholder.jpg"}
           alt={project.title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className={`${
+            project.id === 2
+              ? "object-cover object-top"
+              : project.id === 3
+              ? "object-contain"
+              : "object-cover"
+          } group-hover:scale-110 transition-transform duration-300`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       
@@ -79,6 +98,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <motion.div
@@ -95,6 +115,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <motion.div
@@ -108,7 +129,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </motion.div>
         </motion.div>
       </div>
-    </motion.div>
+      </motion.div>
+
+      {/* Image Gallery Modal */}
+      {project.images && project.images.length > 0 && (
+        <ProjectImageModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          projectTitle={project.title}
+          images={project.images}
+        />
+      )}
+    </>
   );
 }
 
