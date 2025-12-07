@@ -8,16 +8,15 @@ const socialLinks = [
   { icon: Github, href: "https://github.com/joelnithushan", label: "GitHub" },
   {
     icon: Linkedin,
-    href: "https://linkedin.com/in/joelnithushan",
+    href: "https://www.linkedin.com/in/joel-nithushan-a-t",
     label: "LinkedIn",
   },
-  { icon: Mail, href: "mailto:joel@example.com", label: "Email" },
-  { icon: Twitter, href: "https://twitter.com/joelnithushan", label: "Twitter" },
+  { icon: Mail, href: "mailto:joelnithushan6@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8 glass">
+    <footer className="border-t dark:border-white/10 border-black/10 py-8 px-4 sm:px-6 lg:px-8 glass">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">

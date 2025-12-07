@@ -13,8 +13,25 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Client-side validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setStatus("error");
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setStatus("error");
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus("idle");
 
@@ -46,7 +63,7 @@ export default function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto glass-card rounded-2xl p-8 space-y-6 shadow-glass"
+      className="glass-card rounded-2xl p-8 space-y-6 shadow-glass"
     >
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -58,7 +75,7 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 glass border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
+          className="w-full px-4 py-3 text-sm sm:text-base glass border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
         />
       </div>
       <div>
@@ -84,7 +101,7 @@ export default function ContactForm() {
           rows={6}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 glass border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none"
+          className="w-full px-4 py-3 text-sm sm:text-base glass border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none"
         />
       </div>
       {status === "success" && (
@@ -110,7 +127,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-8 py-3 glass-strong text-primary-foreground rounded-xl font-semibold hover:bg-primary/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-glass hover:shadow-glass-lg hover:-translate-y-0.5"
+        className="w-full px-6 sm:px-8 py-3 text-sm sm:text-base glass-strong text-primary-foreground rounded-xl font-semibold hover:bg-primary/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-glass hover:shadow-glass-lg hover:-translate-y-0.5"
       >
         {isSubmitting ? (
           "Sending..."

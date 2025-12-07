@@ -27,9 +27,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-8"
+            className="text-base sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 sm:mb-8"
           >
-            Full-Stack Developer | MERN | Firebase | Android Kotlin
+            <span className="block sm:inline">Software Developer Intern</span>
+            <span className="hidden sm:inline"> | </span>
+            <span className="block sm:inline">MERN | Firebase | Android Kotlin</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,14 +41,14 @@ export default function Hero() {
           >
             <Link
               href="/projects"
-              className="inline-flex items-center justify-center px-8 py-3 glass-strong text-primary-foreground rounded-xl font-semibold hover:bg-primary/20 transition-all duration-300 shadow-glass hover:shadow-glass-lg hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base glass-strong text-primary-foreground rounded-xl font-semibold hover:bg-primary/20 transition-all duration-300 shadow-glass hover:shadow-glass-lg hover:-translate-y-1 w-full sm:w-auto"
             >
               View Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 glass text-foreground rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 shadow-glass hover:shadow-glass-lg hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base glass text-foreground rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 shadow-glass hover:shadow-glass-lg hover:-translate-y-1 w-full sm:w-auto"
             >
               Get In Touch
             </Link>
