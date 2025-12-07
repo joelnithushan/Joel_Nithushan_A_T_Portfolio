@@ -66,7 +66,7 @@ export default function AboutSection() {
             <div className="glass-card rounded-2xl p-8 shadow-glass">
               <div className="relative w-full aspect-square max-w-md mx-auto mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/about-profile.jpg"
+                  src="/images/about/about-profile.png"
                   alt="Joel Nithushan A.T"
                   fill
                   className="object-cover"

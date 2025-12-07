@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-primary">
+          <Link href="/" className="text-xl font-bold text-white">
             Joel Nithushan
           </Link>
           {/* Desktop Navigation */}
@@ -110,9 +110,9 @@ export default function Navbar() {
                       onClick={() => setIsOpen(false)}
                       className={cn(
                         "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-                        isActive
-                          ? "bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
-                          : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    isActive
+                      ? "bg-red-600/90 text-white shadow-lg shadow-red-600/20"
+                      : "text-muted-foreground hover:text-red-600 hover:bg-white/5"
                       )}
                     >
                       {link.label}
