@@ -75,7 +75,7 @@ export default function BackgroundAnimation() {
             const opacity = 1 - distance / connectionDistance;
             const lineColor = theme === "dark" 
               ? `rgba(255, 255, 255, ${opacity * 0.2})`
-              : `rgba(0, 0, 0, ${opacity * 0.15})`;
+              : `rgba(0, 0, 0, ${opacity * 0.55})`;
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
@@ -88,7 +88,7 @@ export default function BackgroundAnimation() {
         // Draw particle
         const particleColor = theme === "dark"
           ? "rgba(255, 255, 255, 0.6)"
-          : "rgba(0, 0, 0, 0.4)";
+          : "rgba(0, 0, 0, 0.85)";
         ctx.fillStyle = particleColor;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
