@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface ProjectImageModalProps {
   isOpen: boolean;
@@ -37,13 +37,32 @@ export default function ProjectImageModal({
     }
   }, [isOpen]);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  }, [images.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  }, [images.length]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        handleNext();
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        handlePrevious();
+      } else if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleNext, handlePrevious, isOpen, onClose]);
 
   if (!images || images.length === 0) return null;
 
@@ -116,11 +135,11 @@ export default function ProjectImageModal({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handlePrevious}
-                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors z-10 bg-white/80 dark:bg-white/10 text-black dark:text-white shadow-lg"
                     aria-label="Previous image"
                   >
                     <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -137,11 +156,11 @@ export default function ProjectImageModal({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleNext}
-                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/10 transition-colors z-10"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 glass rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors z-10 bg-white/80 dark:bg-white/10 text-black dark:text-white shadow-lg"
                     aria-label="Next image"
                   >
                     <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

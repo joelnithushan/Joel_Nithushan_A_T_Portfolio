@@ -54,7 +54,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       
       <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow">
         <motion.h3
-          className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 line-clamp-2"
+          className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 line-clamp-2 dark:text-white text-black"
           whileHover={{ color: "hsl(var(--primary))" }}
           transition={{ duration: 0.2 }}
         >

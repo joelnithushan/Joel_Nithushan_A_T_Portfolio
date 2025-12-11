@@ -79,7 +79,7 @@ export default function Hero() {
             >
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-transparent border-2 border-red-600 text-white rounded-lg hover:bg-red-600 transition-all duration-300 w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-red-600 border-2 border-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 w-full sm:w-auto"
               >
                 View Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -87,7 +87,7 @@ export default function Hero() {
               <a
                 href="/joel_intern_cv.pdf"
                 download="Joel_Nithushan_CV.pdf"
-                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-transparent border-2 border-red-600 text-white rounded-lg hover:bg-red-600 transition-all duration-300 w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-red-600 border-2 border-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 w-full sm:w-auto"
               >
                 Download CV
                 <Download className="ml-2 h-5 w-5" />
