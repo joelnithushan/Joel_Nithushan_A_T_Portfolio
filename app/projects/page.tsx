@@ -3,6 +3,7 @@
 import { projects } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
 import { motion } from "framer-motion";
+import { Github, ArrowRight } from "lucide-react";
 
 // Categorize projects
 const webApps = projects.filter((project) => 
@@ -61,6 +62,26 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
+        </motion.div>
+
+        {/* See More Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex justify-center mt-8 sm:mt-12"
+        >
+          <a
+            href="https://github.com/joelnithushan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold glass-card rounded-xl hover:bg-white/5 transition-all duration-300 shadow-glass hover:shadow-glass-lg hover:-translate-y-1 text-primary"
+          >
+            <Github className="h-5 w-5 sm:h-6 sm:w-6" />
+            See More Projects on GitHub
+            <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+          </a>
         </motion.div>
       </div>
     </div>

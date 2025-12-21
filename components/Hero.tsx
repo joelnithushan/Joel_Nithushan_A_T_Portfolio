@@ -2,28 +2,24 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Side - Profile Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-6 items-center">
+          {/* Left Side - Profile Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative order-2 lg:order-1 flex justify-center lg:justify-start"
+            className="relative order-2 lg:order-1 flex justify-center lg:justify-center lg:pl-8"
           >
-            <div className="relative w-full max-w-md aspect-square">
-              {/* Red Circle Background */}
-              <div className="absolute inset-0 bg-red-600 rounded-full opacity-20 blur-3xl scale-150"></div>
-              <div className="absolute inset-0 bg-red-600 rounded-full opacity-30 blur-2xl scale-125"></div>
-              
-              {/* Profile Image Container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-red-600/30">
+            <div className="glass-card rounded-2xl p-6 sm:p-8 shadow-glass w-full max-w-md mx-auto lg:mx-0">
+              {/* Profile Image */}
+              <div className="relative w-full aspect-square max-w-xs mx-auto mb-6 rounded-xl overflow-hidden">
                 <Image
                   src="/images/about/about-profile.png"
                   alt="Joel Nithushan"
@@ -31,6 +27,20 @@ export default function Hero() {
                   className="object-cover"
                   priority
                 />
+              </div>
+              
+              {/* Name, Title, and Location */}
+              <div className="text-center space-y-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-white">
+                  Joel Nithushan
+                </h2>
+                <p className="text-lg sm:text-xl text-primary font-semibold">
+                  Software Engineer Intern
+                </p>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <MapPin className="h-5 w-5" />
+                  <span className="text-sm sm:text-base">Jaffna, Sri Lanka</span>
+                </div>
               </div>
             </div>
           </motion.div>

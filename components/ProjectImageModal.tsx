@@ -86,7 +86,7 @@ export default function ProjectImageModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, type: "spring", damping: 25 }}
-            className="fixed inset-2 sm:inset-4 md:inset-8 lg:inset-12 z-50 flex flex-col max-w-[95vw] max-h-[95vh] mx-auto"
+            className="fixed inset-2 sm:inset-4 md:inset-8 lg:inset-12 z-50 flex flex-col w-[calc(100vw-1rem)] sm:w-[calc(100vw-2rem)] md:w-[calc(100vw-4rem)] lg:w-[calc(100vw-6rem)] max-w-[95vw] max-h-[95vh] mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}

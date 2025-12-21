@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
   ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({
@@ -28,12 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+      <body className={`${inter.className} overflow-x-hidden`}>
         <ThemeProvider>
           <BackgroundAnimation />
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen w-full overflow-x-hidden">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

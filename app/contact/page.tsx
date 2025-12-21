@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
 
 export const metadata: Metadata = {
@@ -20,9 +19,10 @@ export default function ContactPage() {
             Have a project in mind or want to collaborate? Feel free to reach out!
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          <ContactInfo />
-          <ContactForm />
+        <div className="flex justify-center">
+          <div className="w-full max-w-2xl">
+            <ContactInfo />
+          </div>
         </div>
       </div>
     </div>

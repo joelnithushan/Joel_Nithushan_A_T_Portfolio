@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
-import { MapPin, Award, Users, GraduationCap } from "lucide-react";
+import { Award, Users, GraduationCap } from "lucide-react";
 
 const languagesTech = [
   "JavaScript",
@@ -48,46 +47,34 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="py-20 px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          className="max-w-4xl mx-auto space-y-6"
         >
-          {/* Left Column - Profile Image & Basic Info */}
+          {/* Professional Summary */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="glass-card rounded-2xl p-6 sm:p-8 shadow-glass"
           >
-            <div className="glass-card rounded-2xl p-8 shadow-glass">
-              <div className="relative w-full aspect-square max-w-md mx-auto mb-6 rounded-xl overflow-hidden">
-                <Image
-                  src="/images/about/about-profile.png"
-                  alt="Joel Nithushan A.T"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="text-center space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-white">Joel Nithushan A.T</h2>
-                <p className="text-lg sm:text-xl text-primary">Software Developer Intern</p>
-                <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                  <MapPin className="h-5 w-5" />
-                  <span>Jaffna, Sri Lanka</span>
-                </div>
-              </div>
-            </div>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">Professional Summary</h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+              Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps. Skilled in MERN stack development, MongoDB database management, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
+            </p>
+          </motion.div>
 
+          {/* Education and Achievements Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Education Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="glass-card rounded-2xl p-4 sm:p-6 shadow-glass"
             >
               <div className="flex items-start gap-3 sm:gap-4">
@@ -105,7 +92,7 @@ export default function AboutSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="glass-card rounded-2xl p-4 sm:p-6 shadow-glass"
             >
               <h3 className="text-sm sm:text-base font-semibold mb-4 flex items-center gap-2">
@@ -123,23 +110,15 @@ export default function AboutSection() {
                 </li>
               </ul>
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Right Column - Summary & Skills */}
+          {/* Skills Section */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="space-y-6"
           >
-            {/* Professional Summary */}
-            <div className="glass-card rounded-2xl p-6 sm:p-8 shadow-glass">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">Professional Summary</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps. Skilled in MERN stack development, MongoDB database management, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
-              </p>
-            </div>
-
             {/* Professional Focus Areas */}
             <div className="glass-card rounded-2xl p-4 sm:p-6 shadow-glass">
               <h3 className="text-lg sm:text-xl font-semibold mb-4">Professional Focus Areas</h3>

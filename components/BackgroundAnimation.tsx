@@ -24,8 +24,10 @@ export default function BackgroundAnimation() {
 
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const width = Math.min(window.innerWidth, document.documentElement.clientWidth);
+      const height = Math.min(window.innerHeight, document.documentElement.clientHeight);
+      canvas.width = width;
+      canvas.height = height;
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
