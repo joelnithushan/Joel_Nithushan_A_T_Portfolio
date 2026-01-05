@@ -16,8 +16,10 @@ import {
   SiGit,
   SiGithub,
   SiAndroid,
+  SiAmazonaws,
 } from "react-icons/si";
 import { FaCode } from "react-icons/fa";
+import Image from "next/image";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MongoDB: SiMongodb,
@@ -32,6 +34,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Git: SiGit,
   GitHub: SiGithub,
   "Android Kotlin": SiAndroid,
+  AWS: SiAmazonaws,
 };
 
 export default function SkillsSection() {
@@ -53,7 +56,9 @@ export default function SkillsSection() {
         </motion.div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {skills.map((skill, index) => {
-            const Icon = iconMap[skill.name] || FaCode;
+            const Icon = iconMap[skill.name];
+            const isCustomIcon = skill.name === "n8n";
+            
             return (
               <motion.div
                 key={skill.name}
@@ -65,7 +70,19 @@ export default function SkillsSection() {
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="flex flex-col items-center justify-center p-6 glass-card rounded-xl glass-hover"
               >
-                <Icon className="h-10 w-10 text-primary mb-3" />
+                {isCustomIcon ? (
+                  <div className="relative h-10 w-10 mb-3">
+                    <Image
+                      src="/images/skills/n8n-logo.svg"
+                      alt="n8n Logo"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                ) : (
+                  <Icon className="h-10 w-10 text-primary mb-3" />
+                )}
                 <span className="text-sm text-center text-muted-foreground">
                   {skill.name}
                 </span>
