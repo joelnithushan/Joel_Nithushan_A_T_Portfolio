@@ -16,7 +16,7 @@ import {
   SiGit,
   SiGithub,
   SiAndroid,
-  SiAmazonaws,
+  SiAmazon,
 } from "react-icons/si";
 import { FaCode } from "react-icons/fa";
 
@@ -33,7 +33,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Git: SiGit,
   GitHub: SiGithub,
   "Android Kotlin": SiAndroid,
-  AWS: SiAmazonaws,
+  AWS: SiAmazon,
 };
 
 export default function SkillsSection() {
