@@ -32,7 +32,7 @@ export default function Hero() {
               {/* Name, Title, and Location */}
               <div className="text-center space-y-3">
                 <h2 className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-white">
-                  Joel Nithushan
+                  Joel Nithushan A.T
                 </h2>
                 <p className="text-lg sm:text-xl text-primary font-semibold">
                   Software Engineer Intern
