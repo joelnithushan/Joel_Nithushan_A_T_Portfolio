@@ -100,7 +100,7 @@ export default function AboutSection() {
                     <h4 className="text-sm sm:text-base font-semibold mb-1">BSc (Hons) Information Technology</h4>
                     <p className="text-xs sm:text-sm text-muted-foreground mb-1">Software Engineering</p>
                     <p className="text-xs sm:text-sm font-medium mb-1 break-words">Sri Lanka Institute of Information Technology (SLIIT) — Northern Uni</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">CGPA: 3.32 | Nov 2023 – Present</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">CGPA: 3.41 | Nov 2023 – Present</p>
                   </div>
                 </div>
               </div>
@@ -135,11 +135,11 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="glass-card rounded-2xl p-4 sm:p-6 shadow-glass"
             >
-              <h3 className="text-sm sm:text-base font-semibold mb-4 flex items-center gap-2">
+              <h3 className="text-sm sm:text-base font-semibold mb-2 flex items-center gap-2">
                 <Award className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 Highlights & Achievements
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm">
+              <ul className="space-y-1.5 text-xs sm:text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
                   <span>Dean&apos;s List – 2024</span>
