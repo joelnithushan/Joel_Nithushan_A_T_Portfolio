@@ -28,6 +28,8 @@ const languagesTech = [
   "Postman",
   "Docker",
   "N8N",
+  "Vercel",
+  "Render",
 ];
 
 const softSkills = [
