@@ -65,7 +65,7 @@ export default function AboutSection() {
           >
             <h3 className="text-xl sm:text-2xl font-bold mb-4">Professional Summary</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps. Skilled in MERN stack development, MongoDB database management, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
+              Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, Android mobile apps, and workflow automation. Skilled in MERN stack development, MongoDB database management, Firebase connectivity, and ESP32 sensor integrations. Passionate about building scalable systems with AI features.
             </p>
           </motion.div>
 

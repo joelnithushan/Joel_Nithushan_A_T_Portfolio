@@ -79,7 +79,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
             >
-              Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, and Android mobile apps.
+              Aspiring Software Engineer and BSc (Hons) Software Engineering student with hands-on experience in real-time IoT systems, web development, Android mobile apps, and workflow automation.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
