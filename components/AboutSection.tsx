@@ -159,11 +159,40 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          {/* Skills Section */}
+          {/* Interested Roles Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
+            className="glass-card rounded-2xl p-4 sm:p-6 shadow-glass"
+          >
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2">
+              <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+              Interested Roles
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
+              Currently seeking internship opportunities in the following roles:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer", "Automation Engineer"].map((role, index) => (
+                <motion.span
+                  key={role}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
+                  className="px-3 sm:px-4 py-2 glass text-sm sm:text-base rounded-lg border border-white/10 font-medium"
+                >
+                  {role}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Skills Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="space-y-6"
           >
             {/* Professional Focus Areas */}
@@ -175,7 +204,7 @@ export default function AboutSection() {
                     key={index}
                     initial={{ opacity: 0, x: -10 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-                    transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                    transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                     className="flex items-start gap-2"
                   >
                     <span className="text-primary mt-1">•</span>
@@ -194,7 +223,7 @@ export default function AboutSection() {
                     key={tech}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3, delay: 0.7 + index * 0.05 }}
+                    transition={{ duration: 0.3, delay: 0.8 + index * 0.05 }}
                     className="px-2 sm:px-3 py-1 glass text-xs sm:text-sm rounded-lg border border-white/10"
                   >
                     {tech}
@@ -215,7 +244,7 @@ export default function AboutSection() {
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3, delay: 0.8 + index * 0.05 }}
+                    transition={{ duration: 0.3, delay: 0.9 + index * 0.05 }}
                     className="px-2 sm:px-3 py-1 glass text-xs sm:text-sm rounded-lg border border-white/10"
                   >
                     {skill}

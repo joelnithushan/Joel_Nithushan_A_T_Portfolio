@@ -35,7 +35,7 @@ export default function Hero() {
                   Joel Nithushan A.T
                 </h2>
                 <p className="text-lg sm:text-xl text-primary font-semibold">
-                  Software Engineer Intern
+                  Aspiring Software Engineer
                 </p>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <MapPin className="h-5 w-5" />
@@ -67,9 +67,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-2xl sm:text-3xl md:text-4xl font-semibold"
             >
-              I&apos;m a{" "}
+              Seeking{" "}
               <span className="text-red-600 relative">
-                Software Developer Intern
+                Internship Opportunities
                 <span className="absolute ml-1 w-0.5 h-8 bg-white animate-pulse">|</span>
               </span>
             </motion.div>
