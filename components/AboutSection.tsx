@@ -41,6 +41,7 @@ const focusAreas = [
   "Android Kotlin UI + real-time Firebase sync",
   "Prompt engineering + AI tools",
   "Dashboard systems with data visualization",
+  "Workflow automation",
 ];
 
 export default function AboutSection() {
