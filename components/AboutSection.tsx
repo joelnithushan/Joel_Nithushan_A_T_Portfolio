@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, Users, GraduationCap, School } from "lucide-react";
+import { Award, Users, GraduationCap, Briefcase } from "lucide-react";
 import Image from "next/image";
 
 const languagesTech = [
