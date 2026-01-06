@@ -17,7 +17,14 @@ import {
   SiGithub,
   SiAndroid,
   SiAmazon,
+  SiSpring,
+  SiPostman,
+  SiFigma,
 } from "react-icons/si";
+import { 
+  FaJava,
+  FaMicrochip,
+} from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -34,6 +41,10 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   GitHub: SiGithub,
   "Android Kotlin": SiAndroid,
   AWS: SiAmazon,
+  "Java Spring Boot": SiSpring,
+  Postman: SiPostman,
+  Figma: SiFigma,
+  IoT: FaMicrochip,
 };
 
 export default function SkillsSection() {

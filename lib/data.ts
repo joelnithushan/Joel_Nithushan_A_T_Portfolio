@@ -29,6 +29,10 @@ export const skills: Skill[] = [
   { name: "Android Kotlin", icon: "Android" },
   { name: "AWS", icon: "AWS" },
   { name: "n8n", icon: "n8n" },
+  { name: "Java Spring Boot", icon: "Spring" },
+  { name: "Postman", icon: "Postman" },
+  { name: "Figma", icon: "Figma" },
+  { name: "IoT", icon: "IoT" },
 ];
 
 export const projects: Project[] = [
