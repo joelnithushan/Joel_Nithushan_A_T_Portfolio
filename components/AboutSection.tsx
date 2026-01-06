@@ -10,8 +10,11 @@ const languagesTech = [
   "JavaScript",
   "TypeScript",
   "React",
+  "Next.js",
   "Node.js",
   "Express",
+  "Java",
+  "Java Spring Boot",
   "Kotlin",
   "Firebase RTDB",
   "MongoDB",
@@ -24,6 +27,7 @@ const languagesTech = [
   "Python",
   "Postman",
   "Docker",
+  "N8N",
 ];
 
 const softSkills = [
